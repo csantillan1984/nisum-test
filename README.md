@@ -97,4 +97,4 @@ Se adjunta tambien la colección postman para que los endpoints sean probados a 
   - Luego copiar el token y ponerlo en la cabecera **Authorization** de los endpoints create-user y findAll
 
 ## Arquitectura
-link: ()
+link: (https://github.com/csantillan1984/nisum-test/blob/master/arquitectura.pdf)
