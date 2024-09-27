@@ -91,5 +91,10 @@ En este caso solo hay que mandar las cabeceras (Content-Type: application/json, 
 ```
 ## Coleccion Postman
 Se adjunta tambien la colección postman para que los endpoints sean probados a continuación se detalla la siguiente secuencia:
-- Restaurar la colección en postman ()
-- 
+- Restaurar la colección en postman (https://github.com/csantillan1984/nisum-test/blob/master/nisum.postman_collection.json)
+- Ejecutar los apis en el siguiente orden:
+  - el api de autenticación una vez ejecutado debemos copair el token generado del campo token de la respuesta ej: **Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJuaXN1bS1qd3QiLCJzdWIiOiJuaXN1bSIsImF1dGhvcml0aWVzIjpbIkFETV9VU0VSIl0sImlhdCI6MTcyNzQ3NDE0OSwiZXhwIjoxNzI3NDc3NzQ5fQ.ljsA2BUL-Kh-Z-8kL60A_CeVl24ZiaxKryZIYYwVau14zPbl4vDVs2eJBdPZfK1pc4TmFDhqTKgeYUMAHlFoOQ**
+  - Luego copiar el token y ponerlo en la cabecera **Authorization** de los endpoints create-user y findAll
+
+## Arquitectura
+link: ()
