@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:userdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
+
+validation:
+  passwd:
+    pattern: '^[a-zA-Z ]+$'
+
+jwt:
+  header: "Authorization"
+  bearerPrefix: "Bearer "
+  keySecret: "ZnJhc2VzbGFyZ2FzcGFyYWNvbG9jYXJjb21vY2xhdmVlbnVucHJvamVjdG9kZWVtZXBsb3BhcmFqd3Rjb25zcHJpbmdzZWN1cml0eQ==bWlwcnVlYmFkZWVqbXBsb3BhcmFiYXNlNjQ="
+  authorities: "authorities"
+  expirationTime: 3600000
+  authority: "ADM_USER"
+  id: "nisum-jwt"
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+  packages-to-scan: com.nisum.user.app.infrastructure.input.adapter.rest.impl
+  paths-to-match:
+    - /api/**
+    - /auth/**
+

@@ -1,0 +1,76 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'com.nisum.user'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('snakeyaml.version', '2.0')
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+
+    runtimeOnly 'com.h2database:h2'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+    testCompileOnly "org.projectlombok:lombok"
+    testAnnotationProcessor "org.projectlombok:lombok"
+
+    implementation "org.mapstruct:mapstruct:1.5.3.Final"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.6.0"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.6.0"
+    implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks = 5
+    finalizedBy jacocoTestReport // report is always generated after tests run
+    testLogging {
+        exceptionFormat "full"
+        events "passed", "skipped", "failed"
+
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        xml.destination file("$buildDir/jacoco/test.xml")
+        html.destination file("$buildDir/jacoco/index.html")
+        html.required = true
+        csv.required = true
+    }
+
+}
