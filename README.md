@@ -8,6 +8,9 @@ msa-user-app
 
 Microservicio Spring Boot que publica 3 endpoints para las funcionalidades de (obtener un Jwt token, creación de usuario y listado de usuarios creados).
 
+## Arquitectura
+link: (https://github.com/csantillan1984/nisum-test/blob/master/arquitectura.pdf)
+
 ## Requerimientos para ejecución
 
 Para ejecutar el micro se requiere que en la maquina este instalado lo siguiente:
@@ -96,5 +99,3 @@ Se adjunta tambien la colección postman para que los endpoints sean probados a 
   - el api de autenticación una vez ejecutado debemos copair el token generado del campo token de la respuesta ej: **Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJuaXN1bS1qd3QiLCJzdWIiOiJuaXN1bSIsImF1dGhvcml0aWVzIjpbIkFETV9VU0VSIl0sImlhdCI6MTcyNzQ3NDE0OSwiZXhwIjoxNzI3NDc3NzQ5fQ.ljsA2BUL-Kh-Z-8kL60A_CeVl24ZiaxKryZIYYwVau14zPbl4vDVs2eJBdPZfK1pc4TmFDhqTKgeYUMAHlFoOQ**
   - Luego copiar el token y ponerlo en la cabecera **Authorization** de los endpoints create-user y findAll
 
-## Arquitectura
-link: (https://github.com/csantillan1984/nisum-test/blob/master/arquitectura.pdf)
