@@ -12,7 +12,7 @@ Microservicio Spring Boot que publica 3 endpoints para las funcionalidades de (o
 
 Para ejecutar el micro se requiere que en la maquina este instalado lo siguiente:
 - Java 17 o superior
-- Gradle
+- Gradle 7.3 o superior
 
 ## Pasos para ejecución
 
@@ -20,7 +20,7 @@ Para correr el micro se requiere lo siguiente:
 - Clonar el repositorio (git clone https://github.com/csantillan1984/nisum-test.git)
 - Ubicarse en el directorio nisum-test
 - Una vez dentro del directorio ubicarse en el directorio msa-user-app
-- 
+- Ejecutar linux(./gradlew bootRun) windows (gradlew bootRun)
 
 
 ## Documentación de apis
@@ -89,3 +89,7 @@ En este caso solo hay que mandar las cabeceras (Content-Type: application/json, 
     }
 ]
 ```
+## Coleccion Postman
+Se adjunta tambien la colección postman para que los endpoints sean probados a continuación se detalla la siguiente secuencia:
+- Restaurar la colección en postman ()
+- 
