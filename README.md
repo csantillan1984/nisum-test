@@ -8,6 +8,21 @@ msa-user-app
 
 Microservicio Spring Boot que publica 3 endpoints para las funcionalidades de (obtener un Jwt token, creación de usuario y listado de usuarios creados).
 
+## Requerimientos para ejecución
+
+Para ejecutar el micro se requiere que en la maquina este instalado lo siguiente:
+- Java 17 o superior
+- Gradle
+
+## Pasos para ejecución
+
+Para correr el micro se requiere lo siguiente:
+- Clonar el repositorio (git clone https://github.com/csantillan1984/nisum-test.git)
+- Ubicarse en el directorio nisum-test
+- Una vez dentro del directorio ubicarse en el directorio msa-user-app
+- 
+
+
 ## Documentación de apis
 SwaggerDoc: http://localhost:8080/doc/swagger-ui/index.html#/
 
