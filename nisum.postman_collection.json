@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "b324f918-6666-454c-85da-d91c53390e3f",
+		"name": "nisum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32818085"
+	},
+	"item": [
+		{
+			"name": "autenticacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login?user=nisum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "nisum"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJuaXN1bS1qd3QiLCJzdWIiOiJuaXN1bSIsImF1dGhvcml0aWVzIjpbIkFETV9VU0VSIl0sImlhdCI6MTcyNzQ3NDE0OSwiZXhwIjoxNzI3NDc3NzQ5fQ.ljsA2BUL-Kh-Z-8kL60A_CeVl24ZiaxKryZIYYwVau14zPbl4vDVs2eJBdPZfK1pc4TmFDhqTKgeYUMAHlFoOQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Christian Santillan\",\n    \"email\": \"c_santillan2008@hotmail.es\",\n    \"password\": \"Msantillan\",\n    \"phones\": [\n        {\n            \"number\": \"022471025\",\n            \"citycode\": \"1\",\n            \"contrycode\": \"57\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJuaXN1bS1qd3QiLCJzdWIiOiJuaXN1bSIsImF1dGhvcml0aWVzIjpbIkFETV9VU0VSIl0sImlhdCI6MTcyNzQ3NDE0OSwiZXhwIjoxNzI3NDc3NzQ5fQ.ljsA2BUL-Kh-Z-8kL60A_CeVl24ZiaxKryZIYYwVau14zPbl4vDVs2eJBdPZfK1pc4TmFDhqTKgeYUMAHlFoOQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
